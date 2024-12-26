@@ -16,6 +16,6 @@ bool is_valid(string &s, int i, int ct) {
 int main() {
     string s;
     cin >> s;
-    cout << (is_valid(s, 0, 0) ? "true" : "false");
+    cout << (is_valid(s, 0, 0) ? "true" : "false"); 
     return 0;
 }
