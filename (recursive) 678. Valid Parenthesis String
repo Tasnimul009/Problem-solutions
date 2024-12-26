@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool is_valid(string &s, int i, int ct) {
+    if (ct < 0) return false; 
+    if (i == s.size()) return ct == 0; 
+    if (s[i] == '(') return is_valid(s, i + 1, ct + 1);
+    if (s[i] == ')') return is_valid(s, i + 1, ct - 1);
+    return (
+        is_valid(s, i + 1, ct + 1) || 
+        is_valid(s, i + 1, ct - 1) || 
+        is_valid(s, i + 1, ct)        
+    );
+}
+
+int main() {
+    string s;
+    cin >> s;
+    cout << (is_valid(s, 0, 0) ? "true" : "false");
+    return 0;
+}
